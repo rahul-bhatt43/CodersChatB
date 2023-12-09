@@ -14,8 +14,7 @@ const { Server } = require('socket.io')
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173",
-        // origin: "https://coderschat.netlify.app",
+        origin: ["http://localhost:5173", "https://coderschat.netlify.app"],
         methods: ["GET", "POST"],
     }
 });
@@ -38,5 +37,5 @@ app.get('/', (req, res) => {
 })
 
 server.listen(process.env.PORT || 3000, () => {
-  console.log("Server is running at", process.env.PORT || 3000);
+    console.log("Server is running at", process.env.PORT || 3000);
 });
